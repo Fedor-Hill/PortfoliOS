@@ -45,14 +45,12 @@ jobs:
           resourceGroup: NetworkWatcherRG
           imageToBuild: portfolioos.azurecr.io/portfolio-os:${{ github.sha }}
 
-      - name: Restart Deployment
+      - name: Set AKS Context
         uses: azure/aks-set-context@v3
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
           resource-group: PortfolioOSResourceGroup
           cluster-name: portfolios-os-cluster
-      - name: Trigger update
+
+      - name: Restart Deployment
         run: |
           kubectl rollout restart deployment portfolio-os-angular-app-deployment
-
-
