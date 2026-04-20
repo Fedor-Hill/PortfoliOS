@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: #080810;
+  color: #f0f0ff;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #080810; }
+::-webkit-scrollbar-thumb { background: rgba(0,122,255,0.4); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,122,255,0.7); }
+
+::selection { background: rgba(0,122,255,0.3); color: #fff; }
+
+a { color: inherit; }

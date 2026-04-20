@@ -35,15 +35,12 @@ jobs:
         uses: azure/container-apps-deploy-action@v2
         with:
           appSourcePath: ${{ github.workspace }}
-          _dockerfilePathKey_: _dockerfilePath_
-          _targetLabelKey_: _targetLabel_
+          dockerfilePath: Dockerfile
           registryUrl: portfolioos.azurecr.io
           registryUsername: ${{ secrets.PORTFOLIOOS_REGISTRY_USERNAME }}
           registryPassword: ${{ secrets.PORTFOLIOOS_REGISTRY_PASSWORD }}
           containerAppName: portfolio-os
           resourceGroup: NetworkWatcherRG
           imageToBuild: portfolioos.azurecr.io/portfolio-os:${{ github.sha }}
-          _buildArgumentsKey_: |
-            _buildArgumentsValues_
 
 
