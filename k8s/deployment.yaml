@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: angular-app-deployment
+  name: portfolio-os-angular-app-deployment
 spec:
   replicas: 2 
   selector:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: angular-container
-        image: portfolioos.azurecr.io/portfolio-os:latest
+        image: portfolioos.azurecr.io/portfolio-os@sha256:8373e681c791f987dcb471904b303e63ca0a765f1e8f9cc22efec4234ec57560
         ports:
         - containerPort: 80
       imagePullSecrets:
@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: angular-app-service
+  name: portfolio-os-angular-app-service
 spec:
   type: LoadBalancer
   selector:
