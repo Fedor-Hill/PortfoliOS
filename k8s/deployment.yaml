@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: angular-container
-        image: portfolioos.azurecr.io/portfolio-os@sha256:8373e681c791f987dcb471904b303e63ca0a765f1e8f9cc22efec4234ec57560
+        image: portfolioos.azurecr.io/portfolio-os:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
       imagePullSecrets:
