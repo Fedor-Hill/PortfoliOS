@@ -50,6 +50,7 @@ jobs:
         with:
           resource-group: PortfolioOSResourceGroup
           cluster-name: portfolios-os-cluster
+          admin: true
 
       - name: Restart Deployment
         run: |
