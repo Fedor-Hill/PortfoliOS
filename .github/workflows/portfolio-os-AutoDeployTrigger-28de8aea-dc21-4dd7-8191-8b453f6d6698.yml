@@ -52,6 +52,7 @@ jobs:
           cluster-name: portfolios-os-cluster
           admin: true
 
-      - name: Restart Deployment
+      - name: Update deployment image
         run: |
-          kubectl rollout restart deployment portfolio-os-angular-app-deployment
+          kubectl set image deployment/portfolio-os-angular-app-deployment portfolio-os=portfolioos.azurecr.io/portfolio-os:${{ github.sha }}
+          kubectl rollout status deployment/portfolio-os-angular-app-deployment
