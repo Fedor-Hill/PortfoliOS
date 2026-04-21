@@ -54,5 +54,5 @@ jobs:
 
       - name: Update deployment image
         run: |
-          kubectl set image deployment/portfolio-os-angular-app-deployment portfolio-os=portfolioos.azurecr.io/portfolio-os:${{ github.sha }}
+          kubectl set image deployment/portfolio-os-angular-app-deployment angular-container=portfolioos.azurecr.io/portfolio-os:${{ github.sha }}
           kubectl rollout status deployment/portfolio-os-angular-app-deployment
